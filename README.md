@@ -6,7 +6,7 @@
 
 ## 🚀 Live Preview
 
-🔗 [Live Demo](https://wellnest.vercel.app)
+🔗 [Live Demo](https://wellnest-momen.vercel.app/)
 
 ---
 
