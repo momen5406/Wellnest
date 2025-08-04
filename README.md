@@ -36,7 +36,6 @@ Wellnest/
 
 ## 📷 Screenshots
 
-| Light Mode |
 |------------|
 | ![light](img/screenshot.png) |
 
