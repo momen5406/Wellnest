@@ -7,14 +7,12 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-gray-200: oklch(92.8% 0.006 264.531);
     --color-gray-300: oklch(87.2% 0.01 258.338);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
-    --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-base: 1rem;
+    --text-base--line-height: calc(1.5 / 1);
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --text-2xl: 1.5rem;
@@ -246,20 +244,11 @@
   .my-8 {
     margin-block: calc(var(--spacing) * 8);
   }
-  .ms-auto {
-    margin-inline-start: auto;
-  }
   .mr-4 {
     margin-right: calc(var(--spacing) * 4);
   }
-  .mr-16 {
-    margin-right: calc(var(--spacing) * 16);
-  }
   .mb-2 {
     margin-bottom: calc(var(--spacing) * 2);
-  }
-  .mb-3 {
-    margin-bottom: calc(var(--spacing) * 3);
   }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
@@ -282,9 +271,6 @@
   .ml-3 {
     margin-left: calc(var(--spacing) * 3);
   }
-  .ml-16 {
-    margin-left: calc(var(--spacing) * 16);
-  }
   .flex {
     display: flex;
   }
@@ -293,9 +279,6 @@
   }
   .hidden {
     display: none;
-  }
-  .inline-block {
-    display: inline-block;
   }
   .table {
     display: table;
@@ -362,14 +345,8 @@
   .resize {
     resize: both;
   }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
   .flex-col {
     flex-direction: column;
-  }
-  .flex-row {
-    flex-direction: row;
   }
   .items-center {
     align-items: center;
@@ -526,6 +503,10 @@
     font-size: var(--text-7xl);
     line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
+  .text-base {
+    font-size: var(--text-base);
+    line-height: var(--tw-leading, var(--text-base--line-height));
+  }
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
@@ -540,20 +521,8 @@
   .text-black {
     color: var(--color-black);
   }
-  .text-gray-200 {
-    color: var(--color-gray-200);
-  }
   .text-gray-300 {
     color: var(--color-gray-300);
-  }
-  .text-gray-400 {
-    color: var(--color-gray-400);
-  }
-  .text-gray-500 {
-    color: var(--color-gray-500);
-  }
-  .text-gray-700 {
-    color: var(--color-gray-700);
   }
   .text-secondary {
     color: var(--color-secondary);
@@ -571,11 +540,6 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .transition {
-    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, visibility, content-visibility, overlay, pointer-events;
-    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-    transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
   .transition-all {
     transition-property: all;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
@@ -589,27 +553,6 @@
     &:hover {
       @media (hover: hover) {
         gap: calc(var(--spacing) * 4);
-      }
-    }
-  }
-  .hover\:bg-\[\#0077B5\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #0077B5;
-      }
-    }
-  }
-  .hover\:bg-\[\#181717\] {
-    &:hover {
-      @media (hover: hover) {
-        background-color: #181717;
-      }
-    }
-  }
-  .hover\:text-white {
-    &:hover {
-      @media (hover: hover) {
-        color: var(--color-white);
       }
     }
   }
@@ -639,11 +582,6 @@
       margin-right: calc(var(--spacing) * 16);
     }
   }
-  .md\:mr-auto {
-    @media (width >= 45rem) {
-      margin-right: auto;
-    }
-  }
   .md\:grid-cols-2 {
     @media (width >= 45rem) {
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -657,6 +595,12 @@
   .md\:text-left {
     @media (width >= 45rem) {
       text-align: left;
+    }
+  }
+  .md\:text-base {
+    @media (width >= 45rem) {
+      font-size: var(--text-base);
+      line-height: var(--tw-leading, var(--text-base--line-height));
     }
   }
   .lg\:order-1 {
@@ -717,6 +661,11 @@
   .container {
     margin-inline: auto;
     padding-inline: calc(var(--spacing) * 5);
+  }
+}
+@media (max-width: 45rem) {
+  .download {
+    display: none !important;
   }
 }
 @property --tw-translate-x {
