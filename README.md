@@ -36,7 +36,7 @@ Wellnest/
 
 ## 📷 Screenshots
 
-(img/screenshot.png)
+![screenshot](img/screenshot.png)
 
 ---
 
